@@ -1,6 +1,6 @@
 def parse(line)
   res = {}
-  m = line.match /book (\d{2}) ([\d\-\w]+) (\d+):(\d+) (.*)/
+  m = line.match /Book (\d{2}) ([\d\-\w]+) (\d+):(\d+) (.*)/
   return if m.nil?
 
   res[:booknum] = m[1].to_i
@@ -26,8 +26,8 @@ def bible_hash
         num,name = res[:bookname].split('-')
         res[:bookname] = name + num
       end
-      if res[:bookname] == "song-of-solomon"
-        res[:bookname] = "songofsolomon"
+      if res[:bookname] == "Song-of-Solomon"
+        res[:bookname] = "SongOfSolomon"
       end
       if res[:chapternum] == 1 && res[:versenum] == 1
         book = [nil]
@@ -42,3 +42,5 @@ def bible_hash
   end
   bible
 end
+
+#pp bible_hash
