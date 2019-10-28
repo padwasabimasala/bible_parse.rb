@@ -43,4 +43,4 @@ def bible_hash
   bible
 end
 
-#pp bible_hash
+pp bible_hash
